@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html>
- <head>
-   <title>A Chill Roadtrip Game</title>
- </head>
- <body>
-   <canvas id="gameCanvas" width="480" height="360" style="border:3px solid #000000";>Your browser does not support canvas :( </canvas>
+<head>
+  <title>A Chill Roadtrip Game</title>
+</head>
+<body>
+<canvas id="gameCanvas" width="480" height="360" style="border:3px solid #000000;"></canvas>
 
-   <script>
-    var playerX = 240;
-    var playerY = 180;
-    
-    // draw player
-    var playerc = document.getElementById("gameCanvas")
-    var playerctx = playerc.getContext("2d");
-    playerctx.beginPath();
-    playerctx.arc(playerX, playerY, 20, 0, 2 * Math.PI)
-    playerctx.stroke();
-   </script>
- </body>
+<script>
+var canvas = document.getElementById("gameCanvas");
+var ctx = canvas.getContext("2d");
+
+var playerX = 240;
+var playerY = 180;
+
+document.addEventListener("keydown", function(e) {
+  const key = e.key.toLowerCase();
+  if (key === "w") playerY -= 5;
+  if (key === "s") playerY += 5;
+  if (key === "a") playerX -= 5;
+  if (key === "d") playerX += 5;
+  draw();
+})
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.beginPath();
+  ctx.arc(playerX, playerY, 20, 0, 2 * Math.PI);
+  ctx.stroke();
+}
+draw();
+</script>
+</body>
 </html>
