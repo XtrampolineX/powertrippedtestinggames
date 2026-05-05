@@ -1,7 +1,21 @@
 <!DOCTYPE html>
+<html>
  <head>
    <title>A Chill Roadtrip Game</title>
  </head>
  <body>
-   <canvas id="gameCanvas" width="480" height="360"></canvas>
+   <canvas id="gameCanvas" width="480" height="360" style="border:3px solid #000000";>Your browser does not support canvas :( </canvas>
+
+   <script>
+    var playerX = 240;
+    var playerY = 180;
+    
+    // draw player
+    var playerc = document.getElementById("gameCanvas")
+    var playerctx = playerc.getContext("2d");
+    playerctx.beginPath();
+    playerctx.arc(playerX, playerY, 20, 0, 2 * Math.PI)
+    playerctx.stroke();
+   </script>
  </body>
+</html>
