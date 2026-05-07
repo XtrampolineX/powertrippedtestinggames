@@ -25,15 +25,17 @@ document.addEventListener("keydown", function(e) {
 
 function draw() {
 playerctx.clearRect(0, 0, canvas.width, canvas.height);
+roadctx.clearRect(0, 0, canvas.width, canvas.height);
+
+roadctx.fillStyle = "grey";
+roadctx.fillRect(195, 0, 100, 480);
 
 playerctx.beginPath();
 playerctx.arc(playerX, playerY, 20, 0, 2 * Math.PI);
 playerctx.stroke();
-
-roadctx.fillStyle = "grey";
-roadctx.fillRect(195, 0, 100, 480);
 }
 draw();
 </script>
 </body>
 </html>
+
