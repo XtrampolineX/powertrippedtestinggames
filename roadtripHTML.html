@@ -8,7 +8,8 @@
 
 <script>
 var canvas = document.getElementById("gameCanvas");
-var ctx = canvas.getContext("2d");
+var playerctx = canvas.getContext("2d");
+const roadctx = canvas.getContext("2d");
 
 var playerX = 240;
 var playerY = 180;
@@ -23,11 +24,14 @@ document.addEventListener("keydown", function(e) {
 })
 
 function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+playerctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  ctx.beginPath();
-  ctx.arc(playerX, playerY, 20, 0, 2 * Math.PI);
-  ctx.stroke();
+playerctx.beginPath();
+playerctx.arc(playerX, playerY, 20, 0, 2 * Math.PI);
+playerctx.stroke();
+
+roadctx.fillStyle = "grey";
+roadctx.fillRect(195, 0, 100, 480);
 }
 draw();
 </script>
