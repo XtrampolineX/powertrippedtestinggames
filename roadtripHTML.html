@@ -8,9 +8,7 @@
 
 <script>
 var canvas = document.getElementById("gameCanvas"); console.log("Made by powertrip777")
-const playerctx = canvas.getContext("2d");
-const roadctx = canvas.getContext("2d");
-const backgroundstuffctx = canvas.getContext("2d");
+const ctx = canvas.getContext("2d");
 var playerX = 240;
 var playerY = 180;
 
@@ -24,20 +22,18 @@ document.addEventListener("keydown", function(e) {
 })
 
 function draw() {
-playerctx.clearRect(0, 0, canvas.width, canvas.height);
-roadctx.clearRect(0, 0, canvas.width, canvas.height);
-backgroundstuffctx.clearRect(0, 0, canvas.width, canvas.height);
+ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-backgroundstuffctx.fillStyle = "springgreen"
-backgroundstuffctx.fillRect(0, 0, canvas.width, canvas.height);
-roadctx.fillStyle = "grey";
-roadctx.fillRect(105, 0, 275, canvas.height);
+ctx.fillStyle = "springgreen"
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+ctx.fillStyle = "grey";
+ctx.fillRect(105, 0, 275, canvas.height);
 
-playerctx.beginPath();
-playerctx.arc(playerX, playerY, 20, 0, 2 * Math.PI);
-playerctx.stroke();
-playerctx.fillStyle = "lightgoldenrodyellow";
-playerctx.fill();
+ctx.beginPath();
+ctx.arc(playerX, playerY, 20, 0, 2 * Math.PI);
+ctx.stroke();
+ctx.fillStyle = "lightgoldenrodyellow";
+ctx.fill();
 }
 draw();
 </script>
