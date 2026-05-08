@@ -10,7 +10,7 @@
 var canvas = document.getElementById("gameCanvas");
 const playerctx = canvas.getContext("2d");
 const roadctx = canvas.getContext("2d");
-
+const backgroundstuffctx = canvas.getContext("2d");
 var playerX = 240;
 var playerY = 180;
 
@@ -26,13 +26,18 @@ document.addEventListener("keydown", function(e) {
 function draw() {
 playerctx.clearRect(0, 0, canvas.width, canvas.height);
 roadctx.clearRect(0, 0, canvas.width, canvas.height);
+backgroundstuffctx.clearRect(0, 0, canvas.width, canvas.height);
 
+backgroundstuffctx.fillStyle = "springgreen"
+backgroundstuffctx.fillRect(0, 0, canvas.width, canvas.height);
 roadctx.fillStyle = "grey";
-roadctx.fillRect(195, 0, 100, canvas.height);
+roadctx.fillRect(105, 0, 275, canvas.height);
 
 playerctx.beginPath();
 playerctx.arc(playerX, playerY, 20, 0, 2 * Math.PI);
 playerctx.stroke();
+playerctx.fillStyle = "lightgoldenrodyellow";
+playerctx.fill();
 }
 draw();
 </script>
